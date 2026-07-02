@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/dbt-maesot-marketplace/sw.js', { scope: '/dbt-maesot-marketplace/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/react-ecommerce-template/sw.js', { scope: '/react-ecommerce-template/' })})}
