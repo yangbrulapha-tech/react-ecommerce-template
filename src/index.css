@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Sarabun', 'Outfit', sans-serif;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.dark body {
+  background-image: radial-gradient(#1e293b 1px, transparent 1px);
+}
+
+@layer base {
+  button:not(:disabled) {
+    @apply transition-transform duration-200 active:scale-[0.96];
+  }
+}
+
+/* Premium Card Styles */
+.ecommerce-card {
+  @apply bg-white dark:bg-navy-900 rounded-2xl border border-slate-200/80 dark:border-navy-700 shadow-sm overflow-hidden flex flex-col justify-between transition-all duration-300;
+}
+.ecommerce-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.12), 0 4px 12px -5px rgba(15, 23, 42, 0.05);
+  @apply border-primary-300 dark:border-primary-500;
+}
+
+.btn-gradient-primary {
+  @apply bg-gradient-to-r from-sky-600 via-primary-600 to-indigo-700 dark:from-sky-500 dark:via-primary-500 dark:to-indigo-600 text-white font-bold transition-all duration-300 shadow-md;
+  background-size: 150% auto;
+}
+.btn-gradient-primary:hover {
+  background-position: right center;
+  box-shadow: 0 8px 20px -6px rgba(56, 189, 248, 0.45);
+  @apply -translate-y-0.5;
+}
+.btn-gradient-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px -2px rgba(56, 189, 248, 0.4);
+}
+
+.btn-gradient-rider {
+  @apply bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-500 dark:to-teal-400 text-white font-bold transition-all duration-300 shadow-md;
+  background-size: 150% auto;
+}
+.btn-gradient-rider:hover {
+  background-position: right center;
+  box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.4);
+  @apply -translate-y-0.5;
+}
+.btn-gradient-rider:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px -2px rgba(16, 185, 129, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-navy-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-300 dark:bg-navy-700 rounded-full hover:bg-navy-400 dark:hover:bg-navy-600 transition-colors;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* E-commerce UI Shimmers and Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Glassmorphism containers */
+.glass-panel {
+  @apply bg-white/80 dark:bg-navy-900/80 backdrop-blur-md border border-white/20 dark:border-navy-800 shadow-lg transition-colors duration-300;
+}
+
+/* Toast slide-in animation */
+.animate-slide-in-right {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Skeleton shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.dark .skeleton-shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+}
+
+/* เอฟเฟกต์ไฟเรืองแสงหรูหราสำหรับข้อความหัวข้อภาษาไทย */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.5));
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 28px rgba(56, 189, 248, 0.85));
+  }
+}
+.animate-pulse-subtle {
+  animation: pulseSubtle 3.5s ease-in-out infinite;
+}
+
+
