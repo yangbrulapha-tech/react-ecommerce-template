@@ -8,9 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'DBT Mae Sot Marketplace',
-        short_name: 'DBT Market',
-        description: 'Marketplace for DBT Mae Sot Students',
+        name: 'React E-Commerce',
+        short_name: 'E-Commerce',
+        description: 'Modern E-Commerce Marketplace Template',
         theme_color: '#0f172a',
         background_color: '#f8fafc',
         display: 'standalone',
@@ -29,5 +29,5 @@ export default defineConfig({
       }
     })
   ],
-  base: '/dbt-maesot-marketplace/',
+  base: '/react-ecommerce-template/',
 })
